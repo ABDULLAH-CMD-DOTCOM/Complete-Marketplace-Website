@@ -107,7 +107,7 @@ export default function Home() {
               {/* Payment Method Section */}
               <div className="bg-white p-6 rounded-xl shadow-md">
                 
-              <DynamicComponentWithNoSSR />
+              <DynamicComponentWithNoSSR  />
                 
               </div>
 
