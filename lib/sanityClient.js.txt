@@ -1,0 +1,8 @@
+import { createClient } from 'next-sanity';
+
+export const sanityClient = createClient({
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID, // Sanity Project ID
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production', // Dataset name
+  apiVersion: '2023-01-01', // API Version
+  useCdn: true, // Cache the requests for better performance
+});
