@@ -2,6 +2,7 @@
 import { useState, useEffect, Suspense } from 'react'
 import { useStripe, useElements, PaymentElement } from '@stripe/react-stripe-js'
 import convertToSubCurrency from '../lib/ConvertToSubCurrency'
+import Link from 'next/link'
 
 const CheckoutPage = ({ amount }: { amount: number }) => {
     // console.log(window.location.host)
@@ -73,11 +74,13 @@ const CheckoutPage = ({ amount }: { amount: number }) => {
     return (
         <form onSubmit={handleSubmit} className='p-8'>
             {clientSecret && <PaymentElement />}
+            <Link href={"/payment-success"}>
             <button className="w-full py-3 mt-5 text-white font-bold text-lg rounded-xl 
   bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 
   shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300 ease-in-out">
   Pay Now 💳
 </button>
+</Link>
 
         </form>
     )
